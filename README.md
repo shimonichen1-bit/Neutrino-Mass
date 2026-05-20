@@ -11,7 +11,7 @@ The research focuses on the analytical processing of the digitized beta spectrum
   2. Phase B: Kurie Plot Fitting & Endpoint Analysis – Applying Fermi function corrections to the raw beta spectrum and performing a linear fit near the endpoint energy ($E_0$) to estimate the neutrino mass.
 
 ## Project Structure
-* [scripts/](scripts/) – Contains the core analysis code (e.g., `mca_linearity.py`).
+* [scripts/](scripts/) – Contains the core analysis code.
 * [data/](data/) – Raw experimental data files and MCA spectrum outputs.
 * [output/](output/) – Final high-resolution graphs and vector plots (e.g., `mca_linearity_plot.pdf`).
 * [report/](report/) – (https://www.overleaf.com/read/bvskwdsycgfn#79fcd0)
