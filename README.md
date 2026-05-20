@@ -1,43 +1,26 @@
-# Neutrino-Mass
+# Neutrino Mass Estimation via Beta Decay Spectrum - Physics Lab C
 
-# Neutrino Mass Estimation via Beta Decay Spectrum Analysis
+## Overview
+This repository contains the data analysis, visualization, and source code for the Neutrino Mass experiment conducted as part of the Advanced Physics Laboratory C. 
 
-This repository contains the data processing, calibration, and statistical analysis pipelines for estimating the upper bound of the neutrino rest mass, conducted as part of Laboratory C (מעבדה ג') at Tel Aviv University.
+This project investigates the continuous energy spectrum of electrons emitted during beta decay ($\beta^{-}$). While standard theory provides the fundamental framework for the decay shape, this study uses spectral and residual analysis of the Kurie plot to detect deviations near the endpoint energy, allowing us to place an upper limit on the neutrino rest mass.
 
-##  Project Overview
-The experiment investigates the continuous energy spectrum of electrons emitted during beta decay ($\beta^{-}$). By precisely analyzing the endpoint energy of the spectrum using a Kurie plot representation, we can deduce information regarding the missing energy carried away by the anti-neutrino, placing an upper limit on its rest mass.
+The research focuses on the analytical processing of the digitized beta spectrum. Experimental Methodology is divided into two distinct analytical phases:
 
-The experimental setup consists of:
-* A radioactive beta source.
-* A plastic scintillator or detector system coupled with a PMT.
-* An analog signal processing chain (Pre-amplifier, Main Amplifier, and Pulsers).
-* A Multi-Channel Analyzer (MCA) for digitization and data acquisition.
+  1. Phase A: MCA Linearity Verification – Extraction of peak centroids via local Gaussian fitting across various pulser amplitudes to quantify instrumental systematic uncertainties ($\sigma_{\text{sys}}$).
+  2. Phase B: Kurie Plot Fitting & Endpoint Analysis – Applying Fermi function corrections to the raw beta spectrum and performing a linear fit near the endpoint energy ($E_0$) to estimate the neutrino mass.
 
----
+## Project Structure
+* [scripts/](scripts/) – Contains the core analysis code (e.g., `mca_linearity.py`).
+* [data/](data/) – Raw experimental data files and MCA spectrum outputs.
+* [output/](output/) – Final high-resolution graphs and vector plots (e.g., `mca_linearity_plot.pdf`).
+* [report/](report/) – https://www.overleaf.com/read/ytwpfnbtzgqh#6df9f4.
 
-##  Analysis Pipeline & Structure
+## Requirements
+To run the scripts, you will need:
+* Python 3.x
+* NumPy, SciPy, pandas, Matplotlib, os, and re
 
-The analysis is divided into three logical steps, corresponding to the scripts and execution order in this repository:
-
-### 1. MCA Linearity Verification (`mca_linearity.py`)
-Before converting channels to energy, we verify that the MCA electronic readout responds linearly to input pulse heights.
-* **Method:** Pulses of varying relative amplitudes ($1/\text{Attenuation}$) are injected using a precision pulser. 
-* **Peak Extraction:** Centroids are extracted via local **Gaussian fitting** to achieve sub-channel resolution.
-* **Statistical Output:** An unweighted linear regression ($y = ax + b$) is performed. Instrumental and mechanical systematic uncertainties ($\sigma_{\text{sys}}$) are self-consistently quantified by forcing a reduced chi-squared $\chi_{\nu}^2 = 1$ on the residual scatter.
-
-### 2. Energy Calibration (Upcoming)
-* Translating the validated MCA channels into physical energy units (MeV) using known calibration gamma/beta sources and their corresponding Compton edges or conversion electron peaks.
-
-### 3. Beta Spectrum & Kurie Plot Fitting (Upcoming)
-* Processing the raw beta spectrum data.
-* Applying the Fermi function corrections.
-* Constructing a **Kurie Plot** to perform a linear fit near the endpoint energy ($E_0$), from which the neutrino mass limit is derived.
-
----
-
-##  Prerequisites & Installation
-
-To run the analysis scripts locally or within GitHub Codespaces, you need a Python 3 environment with the following scientific packages installed:
-
-```bash
-pip install numpy scipy matplotlib
+## How to Use
+1. Clone the repository.
+2. Run `python scripts/mca_linearity.py` to process the raw calibration data and extract the system parameters.
