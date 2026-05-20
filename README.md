@@ -7,7 +7,7 @@ This project investigates the continuous energy spectrum of electrons emitted du
 
 The research focuses on the analytical processing of the digitized beta spectrum. Experimental Methodology is divided into two distinct analytical phases:
 
-  1. Phase A: MCA Linearity Verification – Extraction of peak centroids via local Gaussian fitting across various pulser amplitudes to quantify instrumental systematic uncertainties ($\sigma_{\text{sys}}$).
+  1. Phase A: System Linearity Verification 
   2. Phase B: Kurie Plot Fitting & Endpoint Analysis – Applying Fermi function corrections to the raw beta spectrum and performing a linear fit near the endpoint energy ($E_0$) to estimate the neutrino mass.
 
 ## Project Structure
@@ -21,6 +21,3 @@ To run the scripts, you will need:
 * Python 3.x
 * NumPy, SciPy, pandas, Matplotlib, os, and re
 
-## How to Use
-1. Clone the repository.
-2. Run `python scripts/mca_linearity.py` to process the raw calibration data and extract the system parameters.
