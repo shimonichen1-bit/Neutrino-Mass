@@ -14,8 +14,7 @@ The research focuses on the analytical processing of the digitized beta spectrum
 * [scripts/](scripts/) – Contains the core analysis code (e.g., `mca_linearity.py`).
 * [data/](data/) – Raw experimental data files and MCA spectrum outputs.
 * [output/](output/) – Final high-resolution graphs and vector plots (e.g., `mca_linearity_plot.pdf`).
-* [report/](report/) – https://www.overleaf.com/read/ytwpfnbtzgqh#6df9f4.
-
+* [report/](report/) – (https://www.overleaf.com/read/bvskwdsycgfn#79fcd0)
 ## Requirements
 To run the scripts, you will need:
 * Python 3.x
